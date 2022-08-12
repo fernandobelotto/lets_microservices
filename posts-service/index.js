@@ -16,7 +16,6 @@ const posts = {
 
 app.get('/posts', (_req, res) => {
     res.json(posts)
-
 })
 
 app.post('/posts', (req, res) => {
