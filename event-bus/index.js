@@ -15,10 +15,11 @@ app.post('/events', (req, res) => {
     const ports = [4000, 4001, 4002]    
 
     for(let port of ports) {
+
+        console.log(`enviando evento para ms ${port}`)
         axios.post(`http://localhost:${port}/events` , event)
         .then(() => {
-            console.log(`evento ${event.type} recebido`)
-            console.log('enviando evento para ms 4000')
+            console.log(`evento ${event.type} enviado com sucesso para ${port}`)
         })
         .catch(() => console.log(`falha ao enviar para o ms ${port}`))
     }
