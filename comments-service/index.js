@@ -47,7 +47,7 @@ app.get("/", (_req, res) => {
 });
 
 app.post("/events", (req, res) => {
-  const eventType = req.body.type;
+  const eventType = req.body.type;   
 
   console.log(`evento ${eventType} recebido`);
 
