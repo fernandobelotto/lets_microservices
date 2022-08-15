@@ -7,10 +7,14 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+const events = []
+
 app.post('/events', (req, res) => {
 
 
     const event = req.body
+
+    events.push(event)
 
     const ports = [4000, 4001, 4002]    
 
@@ -25,6 +29,11 @@ app.post('/events', (req, res) => {
     }
 
     res.json({})
+})
+
+
+app.get('/events', (req, res) => {
+    res.json(events)
 })
 
 app.listen(4005, () => {

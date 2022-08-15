@@ -29,11 +29,11 @@ app.post("/posts/:id/comments", async (req, res) => {
   comments[postId] = commentsArray;
 
   await axios
-    .post("http://localhost:4005", {
+    .post("http://localhost:4005/events", {
       type: "CommentCreated",
       data: comment,
     })
-    .then(() => console.log("Evento commentCreated enviado"))
+    .then(() => console.log("Evento CommentCreated enviado"))
     .catch(() => console.log("erro ao enviar evento CommentCreated"));
 
   res.status(201).json({});
