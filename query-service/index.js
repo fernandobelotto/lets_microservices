@@ -21,6 +21,17 @@ function handleEvents(event) {
     const comment = event.data;
     posts[postId].comments.push(comment);
   }
+
+  if(event.type=== "CommentUpdated") {
+    const postId = event.data.postId;
+    const newComment = event.data;
+    posts[postId].comments = posts[postId].comments.map(comment => {
+      if(comment.id === newComment.id){
+        return newComment
+      } 
+      return comment
+    })
+  }
 }
 
 app.post("/events", (req, res) => {

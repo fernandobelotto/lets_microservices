@@ -8,7 +8,7 @@ export default function PostList() {
     const [posts, setPosts] = useState({})
 
     const fetchPosts = async () => {
-        const res = await axios.get('http://localhost:4002/posts')
+        const res = await axios.get('http://localhost:5000/posts')
 
         setPosts(res.data)
     }
@@ -17,7 +17,7 @@ export default function PostList() {
       fetchPosts()
     }, [])
     
-    const renderizandoPosts = Object.values(posts).map(post => {
+    const renderizandoPosts = Object?.values(posts)?.map(post => {
 
         return (
             <>

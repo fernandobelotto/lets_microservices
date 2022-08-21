@@ -16,7 +16,7 @@ app.post('/events', (req, res) => {
 
     events.push(event)
 
-    const ports = [4000, 4001, 4002]    
+    const ports = [4000, 4001, 4002, 4003]    
 
     for(let port of ports) {
 
